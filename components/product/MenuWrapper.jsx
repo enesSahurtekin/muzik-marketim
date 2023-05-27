@@ -19,8 +19,8 @@ const MenuWrapper = ({ categoryList, productList }) => {
   return (
     <div className="container mx-auto  mb-16">
     <div className="flex flex-col items-center w-full">
-      <Title addClass="text-[40px]">Our Menu</Title>
-      <div className="mt-10">
+      <Title addClass="text-[40px]">Ürünlerimiz</Title>
+      <div className="mt-10 grid grid-cols-5 gap-4">
       {categoryList &&
             categoryList.map((category, index) => (
               <button
@@ -49,7 +49,7 @@ const MenuWrapper = ({ categoryList, productList }) => {
         className="btn-primary"
         onClick={() => setProductLimit(productLimit + 3)}
       >
-        View More
+        Devamını Gör
       </button>
       </div>
     </div>
