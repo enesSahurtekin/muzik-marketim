@@ -8,7 +8,7 @@ const About = () => {
         <div className="flex justify-center">
          
         <div className="relative sm:w-[445px] sm:h-[600px]  flex justify-center w-[300px] h-[450px]">
-            <Image src="/images/admin.png" alt="" layout="fill" />
+            <Image src="/images/well.png" alt="" layout="fill" />
           </div>
         </div>
         <div className="md:w-1/2 ">
