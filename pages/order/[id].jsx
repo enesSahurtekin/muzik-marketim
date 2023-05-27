@@ -61,7 +61,7 @@ const Order = ({ order }) => {
           </div>
           <div className={`relative flex flex-col ${statusClass(1)}`}>
             <Image
-              src="/images/bake.png"
+              src="/images/pngegg.png"
               alt=""
               width={40}
               height={40}
