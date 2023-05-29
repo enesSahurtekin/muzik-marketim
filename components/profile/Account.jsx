@@ -41,7 +41,7 @@ import { toast } from "react-toastify";
       id: 1,
       name: "fullName",
       type: "text",
-      placeholder: "Your Full Name",
+      placeholder: "ad soyad",
       value: values.fullName,
       errorMessage: errors.fullName,
       touched: touched.fullName,
@@ -50,7 +50,7 @@ import { toast } from "react-toastify";
       id: 2,
       name: "phoneNumber",
       type: "number",
-      placeholder: "Your Phone Number",
+      placeholder: "telefon",
       value: values.phoneNumber,
       errorMessage: errors.phoneNumber,
       touched: touched.phoneNumber,
@@ -59,7 +59,7 @@ import { toast } from "react-toastify";
       id: 3,
       name: "email",
       type: "email",
-      placeholder: "Your Email Address",
+      placeholder: "email ",
       value: values.email,
       errorMessage: errors.email,
       touched: touched.email,
@@ -68,7 +68,7 @@ import { toast } from "react-toastify";
       id: 4,
       name: "address",
       type: "text",
-      placeholder: "Your Address",
+      placeholder: "adres",
       value: values.address,
       errorMessage: errors.address,
       touched: touched.address,
@@ -77,7 +77,7 @@ import { toast } from "react-toastify";
       id: 5,
       name: "job",
       type: "text",
-      placeholder: "Your Job",
+      placeholder: "meslek",
       value: values.job,
       errorMessage: errors.job,
       touched: touched.job,
@@ -86,7 +86,7 @@ import { toast } from "react-toastify";
       id: 6,
       name: "bio",
       type: "text",
-      placeholder: "Your Bio",
+      placeholder: "biyografi",
       value: values.bio,
       errorMessage: errors.bio,
       touched: touched.bio,
@@ -94,7 +94,7 @@ import { toast } from "react-toastify";
   ];
   return (
     <form className="lg:p-8 flex-1 lg:mt-0 mt-5" onSubmit={handleSubmit}>
-      <Title addClass="text-[40px]">Account Settings</Title>
+      <Title addClass="text-[40px]">Hesap ayraları</Title>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4">
         {inputs.map((input) => (
           <Input
@@ -106,7 +106,7 @@ import { toast } from "react-toastify";
         ))}
       </div>
       <button className="btn-primary mt-4" type="submit">
-        Update
+        güncelle
       </button>
     </form>
   );
