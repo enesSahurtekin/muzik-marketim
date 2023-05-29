@@ -35,7 +35,7 @@ const Header = () => {
               }`}
               onClick={() => setIsMenuModal(false)}
             >
-            <Link href="/">Home</Link>
+            <Link href="/">Anasayfa</Link>
             </li>
             <li
               className={`px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer ${
@@ -43,7 +43,7 @@ const Header = () => {
               }`}
               onClick={() => setIsMenuModal(false)}
             >
-            <Link href="/menu">Menu</Link>
+            <Link href="/menu">Ürünlerimiz</Link>
             </li>
             <li
               className={`px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer ${
@@ -51,7 +51,7 @@ const Header = () => {
               }`}
               onClick={() => setIsMenuModal(false)}
             >
-            <Link href="/about">About</Link>
+            <Link href="/about">Hakkımızda</Link>
             </li>
           </ul>
           {isMenuModal && (
@@ -96,7 +96,7 @@ const Header = () => {
             />
           </button>
           <a href="#" className="md:inline-block hidden sm">
-            <button className="btn-primary">Order Online</button>
+            <button className="btn-primary">Sipariş Ver</button>
           </a>
           <button
             className="sm:hidden inline-block"
