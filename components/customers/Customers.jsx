@@ -51,12 +51,12 @@ const Customers = () => {
     
   return (
     <div className="container mx-auto mb-20 mt-12">
-      <Title addClass="text-[40px] text-center">What Says Our Customers</Title>
+      <Title addClass="text-[40px] text-center">Müşterilerimiz Ne Diyor?</Title>
       <Slider {...settings}>
-        <CustomerItem imgSrc="/images/client1.jpg" />
-        <CustomerItem imgSrc="/images/client2.jpg" />
-        <CustomerItem imgSrc="/images/client1.jpg" />
-        <CustomerItem imgSrc="/images/client2.jpg" />
+        <CustomerItem imgSrc="/images/pngegg (1).png" />
+        <CustomerItem imgSrc="/images/pngegg (2).png" />
+        <CustomerItem imgSrc="/images/pngegg (3).png" />
+        <CustomerItem imgSrc="/images/pngegg (4).png" />
         </Slider>
     </div>
   );
