@@ -97,7 +97,7 @@ const AddProduct = ({ setIsProductModal }) => {
       <OutsideClickHandler onOutsideClick={() => setIsProductModal(false)}>
         <div className="w-full h-full grid place-content-center relative">
           <div className="relative z-50 md:w-[600px] w-[370px]  bg-white border-2 p-10 rounded-3xl">
-            <Title addClass="text-[40px] text-center">Add a New Product</Title>
+            <Title addClass="text-[40px] text-center">yeni kategori ekle</Title>
 
             <div className="flex flex-col text-sm mt-6">
             <label className="flex gap-2 items-center">
@@ -107,7 +107,7 @@ const AddProduct = ({ setIsProductModal }) => {
                   className="hidden"
                 />
                 <button className="btn-primary !rounded-none !bg-blue-600 pointer-events-none">
-                  Choose an Image
+                  resim seç
                 </button>
                 {imageSrc && (
                   <div>
@@ -122,28 +122,28 @@ const AddProduct = ({ setIsProductModal }) => {
               </label>
             </div>
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">Title</span>
+              <span className="font-semibold mb-[2px]">başlık</span>
               <input
                 type="text"
                 className="border-2 p-1 text-sm px-1 outline-none"
-                placeholder="Write a title..."
+                placeholder="başlık yaz..."
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">Description</span>
+              <span className="font-semibold mb-[2px]">açıklama</span>
               <textarea
                 className="border-2 p-1 text-sm px-1 outline-none"
-                placeholder="Write a title..."
+                placeholder="açıklama yaz..."
                 onChange={(e) => setDesc(e.target.value)}
               />
             </div>
 
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">Select Category</span>
+              <span className="font-semibold mb-[2px]">kategori seç</span>
               <select
                 className="border-2 p-1 text-sm px-1 outline-none"
-                placeholder="Write a title..."
+                placeholder="açıklama..."
                 onChange={(e) => setCategory(e.target.value)}
               >
                    {categories.length > 0 &&
@@ -159,7 +159,7 @@ const AddProduct = ({ setIsProductModal }) => {
             </div>
 
             <div className="flex flex-col text-sm mt-4 w-full">
-              <span className="font-semibold mb-[2px]">Prices</span>
+              <span className="font-semibold mb-[2px]">fiyat</span>
               {category === "pizza" ? (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
@@ -193,12 +193,12 @@ const AddProduct = ({ setIsProductModal }) => {
               )}
             </div>
             <div className="flex flex-col text-sm mt-4 w-full">
-              <span className="font-semibold mb-[2px]">Extra</span>
+              <span className="font-semibold mb-[2px]">Ekstra</span>
               <div className="flex  gap-6 w-full md:flex-nowrap flex-wrap">
                 <input
                   type="text"
                   className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                  placeholder="item"
+                  placeholder="öğe"
                   name="text"
                   onChange={(e) =>
                     setExtra({ ...extra, [e.target.name]: e.target.value })
@@ -207,14 +207,14 @@ const AddProduct = ({ setIsProductModal }) => {
                 <input
                   type="number"
                   className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                  placeholder="price"
+                  placeholder="fiyat"
                   name="price"
                   onChange={(e) =>
                     setExtra({ ...extra, [e.target.name]: e.target.value })
                   }
                 />
                  <button className="btn-primary ml-auto" onClick={handleExtra}>
-                  Add
+                  ekle
                 </button>
               </div>
               <div className="mt-2 flex gap-2">
@@ -238,7 +238,7 @@ const AddProduct = ({ setIsProductModal }) => {
                 className="btn-primary !bg-success"
                 onClick={handleCreate}
               >
-                Create
+                oluştur
               </button>
             </div>
             <button
