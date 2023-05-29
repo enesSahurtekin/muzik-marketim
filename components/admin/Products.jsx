@@ -40,25 +40,25 @@ const Products = () => {
 
     return (
         <div className="lg:p-8 flex-1 lg:mt-0 mt-5">
-          <Title addClass="text-[40px]">Products</Title>
+          <Title addClass="text-[40px]">ÜRÜNLER</Title>
           <div className="overflow-auto max-h-[400px] w-full mt-5">
           <table className="w-full text-sm text-center text-gray-500 xl:min-w-[1000px] ">
               <thead className="text-xs text-gray-400 uppercase bg-gray-700">
                 <tr>
                   <th scope="col" className="py-3 px-6">
-                    IMAGE
+                    RESİM
                   </th>
                   <th scope="col" className="py-3 px-6">
                     ID
                   </th>
                   <th scope="col" className="py-3 px-6">
-                    TITLE
+                    BAŞLIK
                   </th>
                   <th scope="col" className="py-3 px-6">
-                    PRICE
+                    FİYAT
                   </th>
                   <th scope="col" className="py-3 px-6">
-                    ACTION
+                    SONUÇ
                   </th>
                 </tr>
               </thead>
@@ -84,14 +84,14 @@ const Products = () => {
                     {product.title}
                   </td>
                   <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                    $ {product.prices[0]}
+                     {product.prices[0]} ₺
                   </td>
                   <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                     <button
                       className="btn-primary !bg-danger"
                       onClick={() => handleDelete(product._id)}
                     >
-                      Delete
+                      sil
                     </button>
                   </td>
                 </tr>
