@@ -12,16 +12,13 @@ const About = () => {
           </div>
         </div>
         <div className="md:w-1/2 ">
-          <Title addClass="text-[40px]">We Are Feane</Title>
+          <Title addClass="text-[40px]">Biz Kimiz?</Title>
           <p className="my-5 flex flex-col items-center">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don`t look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you
-            need to be sure there isn`t anything embarrassing hidden in the
-            middle of text. All
-          </p>
-          <button className="btn-primary">Read More</button>
+           Müzik Marketim ses ışık ve müzik aletleri  kategorisinde yüzlerce devlet kurumu ve 
+          kurumsal firmanın ihtiyaçları doğrultusunda en doğru ve en mantıklı çözümleri sunmaktadır. 
+          Size özel atanan alanında uzman destek ekibimiz alanlarındaki bilgilerini doğru ve verimli 
+          bir şekilde kullanarak taleplerinizi hızlıca karşılar.
+          <button className="btn-primary">Devamını oku</button>
         </div>
       </div>
     </div>
