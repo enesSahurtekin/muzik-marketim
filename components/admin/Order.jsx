@@ -43,22 +43,22 @@ const Order = () => {
           <thead className="text-xs text-gray-400 uppercase bg-gray-700">
             <tr>
               <th scope="col" className="py-3 px-6">
-                PRODUCT ID
+                ürün ID
               </th>
               <th scope="col" className="py-3 px-6">
-                CUSTOMER
+                müşteri
               </th>
               <th scope="col" className="py-3 px-6">
                 TOTAL
               </th>
               <th scope="col" className="py-3 px-6">
-                PAYMENT
+                ödeme
               </th>
               <th scope="col" className="py-3 px-6">
-                STATUS
+                durumu
               </th>
               <th scope="col" className="py-3 px-6">
-                ACTION
+                etkisi
               </th>
             </tr>
           </thead>
@@ -78,7 +78,7 @@ const Order = () => {
                       {order?.customer}
                     </td>
                     <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                      $ {order?.total}
+                       {order?.total} ₺
                     </td>
                     <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                       {order?.method === 0 ? "Cash" : "Card"}
@@ -92,7 +92,7 @@ const Order = () => {
                         onClick={() => handleStatus(order?._id)}
                         disabled={order?.status > 1}
                       >
-                        Next Stage
+                        sonraki
                       </button>
                     </td>
                   </tr>
