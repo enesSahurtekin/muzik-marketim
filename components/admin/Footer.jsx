@@ -160,7 +160,7 @@ const Footer = () => {
           value={iconName}
         />
              <button className="btn-primary" type="button" onClick={handleCreate}>
-            Add
+            ekle
           </button>
         </div>
         <ul className="flex items-center gap-6">
@@ -183,7 +183,7 @@ const Footer = () => {
       </div>
       
       <button className="btn-primary mt-4" type="submit">
-        Update
+        güncelle
       </button>
     </form>
   );
