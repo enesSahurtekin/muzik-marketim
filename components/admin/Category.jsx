@@ -50,7 +50,7 @@ const Category = () => {
 
   return (
     <div className="lg:p-8 flex-1 lg:mt-0 mt-5">
-      <Title addClass="text-[40px]">Category</Title>
+      <Title addClass="text-[40px]">kategori</Title>
       <div className="mt-5">
         <div className="flex gap-4 flex-1 items-center">
           <Input
@@ -59,7 +59,7 @@ const Category = () => {
             value={inputText}
           />
            <button className="btn-primary" onClick={handleCreate}>
-            Add
+            ekle
           </button>
         </div>
         <div className="mt-10  max-h-[250px] overflow-auto pb-4">
@@ -70,7 +70,7 @@ const Category = () => {
                 className="btn-primary !bg-danger"
                 onClick={(e) => handleDelete(e, category._id)}
               >
-                Delete
+                sil
               </button>
             </div>
           ))}
