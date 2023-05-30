@@ -48,11 +48,10 @@ const Carousel = () => {
         </div>
         <div>
         <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
-            <Title addClass="text-5xl">Fast Food Restaurant</Title>
+            <Title addClass="text-5xl">Müzik Marketim</Title>
             <p className="text-sm sm:w-2/5 w-full">
              Haziran Ayına Özel Tüm Ürünlerde ki inidirimi kaçırmayın
-            </p>
-            <button className="btn-primary">Order Now</button>
+           
           </div>
         </div>
       </Slider>
