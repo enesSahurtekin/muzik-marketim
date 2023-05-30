@@ -12,13 +12,14 @@ const About = () => {
           </div>
         </div>
         <div className="md:w-1/2 ">
-          <Title addClass="text-[40px]">Biz Kimiz?</Title>
+          <Title addClass="text-[40px]">We Are Feane</Title>
           <p className="my-5 flex flex-col items-center">
-           Müzik Marketim ses ışık ve müzik aletleri  kategorisinde yüzlerce devlet kurumu ve 
+          Müzik Marketim ses ışık ve müzik aletleri  kategorisinde yüzlerce devlet kurumu ve 
           kurumsal firmanın ihtiyaçları doğrultusunda en doğru ve en mantıklı çözümleri sunmaktadır. 
           Size özel atanan alanında uzman destek ekibimiz alanlarındaki bilgilerini doğru ve verimli 
-          bir şekilde kullanarak taleplerinizi hızlıca karşılanır
-          <button className="btn-primary">Devamını oku</button>
+          bir şekilde kullanarak taleplerinizi hızlıca karşılar.
+          </p>
+          <button className="btn-primary">devamını oku</button>
         </div>
       </div>
     </div>
