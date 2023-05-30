@@ -17,7 +17,7 @@ const About = () => {
            Müzik Marketim ses ışık ve müzik aletleri  kategorisinde yüzlerce devlet kurumu ve 
           kurumsal firmanın ihtiyaçları doğrultusunda en doğru ve en mantıklı çözümleri sunmaktadır. 
           Size özel atanan alanında uzman destek ekibimiz alanlarındaki bilgilerini doğru ve verimli 
-          bir şekilde kullanarak taleplerinizi hızlıca karşılar.
+          bir şekilde kullanarak taleplerinizi hızlıca karşılanır.
           <button className="btn-primary">Devamını oku</button>
         </div>
       </div>
