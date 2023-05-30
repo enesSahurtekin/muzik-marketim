@@ -15,7 +15,7 @@ const Profile = ({ user }) => {
   
 
   const handleSignOut = () => {
-    if (confirm("Are you sure you want to sign out?")) {
+    if (confirm("Çıkış yapmak istediğinizden emin misiniz??")) {
       signOut({ redirect: false });
       push("/auth/login");
     }
@@ -48,7 +48,7 @@ const Profile = ({ user }) => {
             onClick={() => setTabs(0)}
           >
             <i className="fa fa-home"></i>
-            <button className="ml-1 ">Account</button>
+            <button className="ml-1 ">hesap</button>
           </li>
           <li
               className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
@@ -57,7 +57,7 @@ const Profile = ({ user }) => {
             onClick={() => setTabs(1)}
           >
             <i className="fa fa-key"></i>
-            <button className="ml-1">Password</button>
+            <button className="ml-1">şifre</button>
           </li>
           <li
             className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
@@ -66,14 +66,14 @@ const Profile = ({ user }) => {
             onClick={() => setTabs(2)}
           >
             <i className="fa fa-motorcycle"></i>
-            <button className="ml-1">Orders</button>
+            <button className="ml-1">sipariş</button>
           </li>
           <li
                 className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all`}
              onClick={handleSignOut}
           >
             <i className="fa fa-sign-out"></i>
-            <button className="ml-1">Exit</button>
+            <button className="ml-1">çıkış</button>
           </li>
         </ul>
       </div>
