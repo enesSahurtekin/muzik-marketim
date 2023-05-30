@@ -40,18 +40,20 @@ const Carousel = () => {
         <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
             <Title addClass="text-5xl">Aradığın Her şey Müzik Marketimde</Title>
             <p className="text-sm sm:w-2/5 w-full">
-                Ürünü Sepetinize Ekleyin ve Sipariş Adımlarını Takip edin <br/>
+            Ürünü Sepetinize Ekleyin ve Sipariş Adımlarını Takip edin <br/>
       Siparişinizi bir hesap oluşturarak verebilir, alışverişinizi tamamlayabilirsiniz
             </p>
-            
+          
           </div>
         </div>
         <div>
         <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
-            <Title addClass="text-5xl">Müzik Marketim</Title>
+            <Title addClass="text-5xl">Müzik marketim</Title>
             <p className="text-sm sm:w-2/5 w-full">
-             Haziran Ayına Özel Tüm Ürünlerde ki inidirimi kaçırmayın
+            Haziran Ayına Özel Tüm Ürünlerde ki inidirimi kaçırmayın
            
+            </p>
+          
           </div>
         </div>
       </Slider>
