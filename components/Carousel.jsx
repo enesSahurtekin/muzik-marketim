@@ -41,7 +41,7 @@ const Carousel = () => {
             <Title addClass="text-5xl">Aradığın Her şey Müzik Marketimde</Title>
             <p className="text-sm sm:w-2/5 w-full">
                 Ürünü Sepetinize Ekleyin ve Sipariş Adımlarını Takip edin <br/>
-      Siparişinizi bir hesap oluşturarak verebilir, alışverişinizi tamamlayabilirsiniz.
+      Siparişinizi bir hesap oluşturarak verebilir, alışverişinizi tamamlayabilirsiniz
             </p>
             
           </div>
