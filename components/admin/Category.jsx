@@ -37,7 +37,7 @@ const Category = () => {
   const handleDelete = async (e, id) => {
     e.preventDefault();
     try {
-      if (confirm("Are you sure you want to delete this category?")) {
+      if (confirm("Bu kategoriyi silmek istediğinizden emin misiniz?")) {
         await axios.delete(
           `${process.env.NEXT_PUBLIC_API_URL}/categories/${id}`
         );
@@ -54,7 +54,7 @@ const Category = () => {
       <div className="mt-5">
         <div className="flex gap-4 flex-1 items-center">
           <Input
-            placeholder="Add a new Category..."
+            placeholder="yeni kategori ekle..."
             onChange={(e) => setInputText(e.target.value)}
             value={inputText}
           />
