@@ -106,7 +106,7 @@ const Footer = () => {
       id: 5,
       name: "day",
       type: "text",
-      placeholder: "Update Day",
+      placeholder: "güncelleme günü",
       value: values.day,
       errorMessage: errors.day,
       touched: touched.day,
