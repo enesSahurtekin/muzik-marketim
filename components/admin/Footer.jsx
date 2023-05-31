@@ -44,7 +44,7 @@ const Footer = () => {
         }
       );
       if (res.status === 200) {
-        toast.success("Footer updated successfully");
+        toast.success("Altbilgi başarıyla güncellendi");
       }
     } catch (err) {
       console.log(err);
@@ -70,7 +70,7 @@ const Footer = () => {
       id: 1,
       name: "location",
       type: "text",
-      placeholder: "Your Location",
+      placeholder: "konum",
       value: values.location,
       errorMessage: errors.location,
       touched: touched.location,
@@ -79,7 +79,7 @@ const Footer = () => {
       id: 2,
       name: "email",
       type: "text",
-      placeholder: "Your Email",
+      placeholder: "Email",
       value: values.email,
       errorMessage: errors.email,
       touched: touched.email,
@@ -88,7 +88,7 @@ const Footer = () => {
       id: 3,
       name: "phoneNumber",
       type: "number",
-      placeholder: "Your Phone Number",
+      placeholder: "numara",
       value: values.phoneNumber,
       errorMessage: errors.phoneNumber,
       touched: touched.phoneNumber,
@@ -97,7 +97,7 @@ const Footer = () => {
       id: 4,
       name: "desc",
       type: "text",
-      placeholder: "Your Description",
+      placeholder: "tanım",
       value: values.desc,
       errorMessage: errors.desc,
       touched: touched.desc,
@@ -115,7 +115,7 @@ const Footer = () => {
       id: 6,
       name: "time",
       type: "text",
-      placeholder: "Update Time",
+      placeholder: "güncelleme zamanı",
       value: values.time,
       errorMessage: errors.time,
       touched: touched.time,
@@ -150,12 +150,12 @@ const Footer = () => {
       <div className="flex items-center gap-4">
        
         <Input
-          placeholder="Link Address"
+          placeholder="Link adresi"
           onChange={(e) => setLinkAddress(e.target.value)}
           value={linkAddress}
         />
         <Input
-          placeholder="Icon Name"
+          placeholder="Icon ismi"
           onChange={(e) => setIconName(e.target.value)}
           value={iconName}
         />
