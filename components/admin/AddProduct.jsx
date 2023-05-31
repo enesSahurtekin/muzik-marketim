@@ -85,7 +85,7 @@ const AddProduct = ({ setIsProductModal }) => {
   
         if (res.status === 201) {
           setIsProductModal(false);
-          toast.success("Product created successfully!");
+          toast.success("Ürün başarıyla oluşturuldu!");
         }
 
       } catch (err) {
@@ -97,7 +97,7 @@ const AddProduct = ({ setIsProductModal }) => {
       <OutsideClickHandler onOutsideClick={() => setIsProductModal(false)}>
         <div className="w-full h-full grid place-content-center relative">
           <div className="relative z-50 md:w-[600px] w-[370px]  bg-white border-2 p-10 rounded-3xl">
-            <Title addClass="text-[40px] text-center">yeni kategori ekle</Title>
+            <Title addClass="text-[40px] text-center">yeni ürün ekle</Title>
 
             <div className="flex flex-col text-sm mt-6">
             <label className="flex gap-2 items-center">
@@ -165,21 +165,10 @@ const AddProduct = ({ setIsProductModal }) => {
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="small"
+                    placeholder="fiyat"
                     onChange={(e) => changePrice(e, 0)}
                   />
-                  <input
-                    type="number"
-                    className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="medium"
-                    onChange={(e) => changePrice(e, 1)}
-                  />
-                  <input
-                    type="number"
-                    className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="large"
-                    onChange={(e) => changePrice(e, 2)}
-                  />
+                 
                 </div>
               ) : (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
