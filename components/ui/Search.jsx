@@ -45,7 +45,7 @@ const Search = ({ setIsSearchModal }) => {
         <div className="w-full h-full grid place-content-center relative">
           <div className="relative z-50 w-[600px] h-[600px] bg-white border-2 p-5">
          
-            <Title addClass="text-[40px] text-center">Search</Title>
+            <Title addClass="text-[40px] text-center">ara</Title>
             <Input placeholder="Search..." onChange={handleSearch} />
             {products.length > 0 ? (
               <ul className="mt-4">
@@ -72,7 +72,7 @@ const Search = ({ setIsSearchModal }) => {
                     </li>
                   ))
                 ) : (
-                  <p className="text-center font-semibold">No results found!</p>
+                  <p className="text-center font-semibold">bulanamadı!</p>
                 )}
               </ul>
             ) : (
