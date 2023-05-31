@@ -17,13 +17,13 @@ const Order = ({ order }) => {
             <thead className="text-xs text-gray-400 uppercase bg-gray-700">
               <tr>
                 <th scope="col" className="py-3 px-6">
-                  ORDER ID
+                  sipariş ID
                 </th>
                 <th scope="col" className="py-3 px-6">
-                  CUSTOMER
+                  müşteri
                 </th>
                 <th scope="col" className="py-3 px-6">
-                  ADDRESS
+                  Adres
                 </th>
                 <th scope="col" className="py-3 px-6">
                   TOTAL
@@ -42,7 +42,7 @@ const Order = ({ order }) => {
                 {order?.address}
                 </td>
                 <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                ${order?.total}
+                {order?.total} ₺
                 </td>
               </tr>
             </tbody>
@@ -57,7 +57,7 @@ const Order = ({ order }) => {
               height={40}
               objectFit="contain"
             />
-            <span>Payment</span>
+            <span>ödeme</span>
           </div>
           <div className={`relative flex flex-col ${statusClass(1)}`}>
             <Image
@@ -67,7 +67,7 @@ const Order = ({ order }) => {
               height={40}
               objectFit="contain"
             />
-            <span>Preparing</span>
+            <span>hazırlanıyor</span>
           </div>
           <div className={`relative flex flex-col ${statusClass(2)}`}>
             <Image
@@ -77,7 +77,7 @@ const Order = ({ order }) => {
               height={40}
               objectFit="contain"
             />
-            <span>On the way</span>
+            <span>yolda</span>
           </div>
           <div className={`relative flex flex-col ${statusClass(3)}`}>
             <Image
@@ -87,7 +87,7 @@ const Order = ({ order }) => {
               height={40}
               objectFit="contain"
             />
-            <span>Delivered</span>
+            <span>teslim edilmiş</span>
           </div>
         </div>
       </div>
