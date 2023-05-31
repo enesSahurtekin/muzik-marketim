@@ -175,7 +175,7 @@ const AddProduct = ({ setIsProductModal }) => {
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="small"
+                    placeholder="fiyat giriniz"
                     onChange={(e) => changePrice(e, 0)}
                   />
                 </div>
