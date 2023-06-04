@@ -45,7 +45,7 @@ const Index = ({ food }) => {
   return (
     <div className="flex items-center md:h-[calc(100vh_-_88px)] gap-5 py-20 flex-wrap ">
       <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-36 h-36 mx-auto">
-      <Image
+        <Image
           src={food?.img}
           alt=""
           layout="fill"
@@ -59,11 +59,10 @@ const Index = ({ food }) => {
           {price}₺
         </span>
         <p className="text-sm my-4 md:pr-24">{food?.desc}</p>
-        
-          
+
         <div className="flex gap-x-4 my-6 md:justify-start justify-center">
           {extraItems.map((item) => (
-             <label className="flex items-center gap-x-1" key={item._id}>
+            <label className="flex items-center gap-x-1" key={item._id}>
               <input
                 type="checkbox"
                 className="w-5 h-5 accent-primary"
@@ -73,12 +72,8 @@ const Index = ({ food }) => {
             </label>
           ))}
         </div>
-        <button
-          className="btn-primary"
-          onClick={handleClick}
-          disabled={findCart}
-        >
-          kart ekle
+        <button className="btn-primary" onClick={handleClick}>
+          ekle
         </button>
       </div>
     </div>
@@ -98,3 +93,4 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default Index;
+
