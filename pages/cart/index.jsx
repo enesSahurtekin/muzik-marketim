@@ -17,7 +17,7 @@ const Cart = ({ userList }) => {
 
   const newOrder = {
     customer: user?.fullName,
-    address: user?.address ? user?.address : "No address",
+    address: user?.address ? user?.address : "adres yok",
     total: cart.total,
     method: 0,
   };
@@ -25,7 +25,8 @@ const Cart = ({ userList }) => {
   const createOrder = async () => {
     try {
       if (session) {
-        if (confirm("Are you sure to order?")) {
+        if (confirm( "Sipariş vereceğinizden emin misiniz?")) {
+                   
           const res = await axios.post(
             `${process.env.NEXT_PUBLIC_API_URL}/orders`,
             newOrder
@@ -33,7 +34,8 @@ const Cart = ({ userList }) => {
           if (res.status === 201) {
             router.push(`/order/${res.data._id}`);
             dispatch(reset());
-            toast.success("Order created successfully", {
+            toast.success("Sipariş başarıyla oluşturuldu",{
+                  
               autoClose: 1000,
             });
           }
@@ -91,10 +93,10 @@ const Cart = ({ userList }) => {
                           ? product.extras.map((item) => (
                               <span key={item.id}>{item.text}, </span>
                             ))
-                          : "empty"}
+                          : "boş"}
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                        ${product.price}
+                        {product.price}₺
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                         {product.quantity}
@@ -112,9 +114,9 @@ const Cart = ({ userList }) => {
           <Title addClass="text-[40px]">Kart TOTAL</Title>
 
           <div className="mt-6">
-          <b>aratotal: </b>${cart.total} <br />
+          <b>aratotal: </b>{cart.total}₺<br />
             <b className=" inline-block my-1">indirim: </b>$0.00 <br />
-            <b>Total: </b>${cart.total}
+            <b>Total: </b>{cart.total}₺
           </div>
 
           <div>
