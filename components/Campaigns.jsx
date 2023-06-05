@@ -16,7 +16,7 @@ const CampaignItem = () => {
         />
       </div>
       <div className="text-white">
-        <Title addClass="text-2xl">tüm ürünlerde indirim</Title>
+        <Title addClass="text-2xl">tüm ürünlerde </Title>
         <div className="font-dancing my-1">
           <span className="text-[40px]">20%</span>
           <span className="text-sm inline-block ml-1">indirim</span>
