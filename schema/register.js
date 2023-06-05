@@ -2,17 +2,17 @@ import * as Yup from "yup";
 
 export const registerSchema = Yup.object({
   fullName: Yup.string()
-    .required("Full name is required.")
-    .min(3, "Full name must be at least 3 characters."),
-  email: Yup.string().required("Email is required.").email("Email is invalid."),
+    .required("Tam ad gereklidir.")
+    .min(3, " Tam ad en az 3 karakter olmalıdır."),
+  email: Yup.string().required("Email gereklidir.").email("e-posta geçersiz."),
   password: Yup.string()
-    .required("Password is required.")
-    .min(8, "Password must be at least 8 characters.")
+    .required("şifre gereklidir.")
+    .min(8, "şifre en az 8 karekter olmalıdır")
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      "Password must contain at least one uppercase, one lowercase, one number and one special character."
+      "Şifre en az bir büyük harf, bir küçük harf, bir sayı ve bir özel karakter içermelidir.."
     ),
   confirmPassword: Yup.string()
-    .required("Confirm password is required.")
-    .oneOf([Yup.ref("password"), null], "Passwords must match."),
+    .required("Parolanın gerekli olduğunu onaylayın.")
+    .oneOf([Yup.ref("şifre"), null], "Şifreler aynı olmalıdır."),
 });
