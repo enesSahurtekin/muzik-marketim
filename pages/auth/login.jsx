@@ -55,7 +55,7 @@ const Login = () => {
       id: 1,
       name: "email",
       type: "email",
-      placeholder: "Your Email Address",
+      placeholder: "Email Adres",
       value: values.email,
       errorMessage: errors.email,
       touched: touched.email,
@@ -64,7 +64,7 @@ const Login = () => {
       id: 2,
       name: "password",
       type: "password",
-      placeholder: "Your Password",
+      placeholder: "şifre",
       value: values.password,
       errorMessage: errors.password,
       touched: touched.password,
@@ -77,7 +77,7 @@ const Login = () => {
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
       >
-        <Title addClass="text-[40px] mb-6">Login</Title>
+        <Title addClass="text-[40px] mb-6">Giriş</Title>
         <div className="flex flex-col gap-y-2 w-full">
           {inputs.map((input) => (
             <Input
@@ -90,19 +90,12 @@ const Login = () => {
         </div>
         <div className="flex flex-col gap-y-3 w-full">
         <button className="btn-primary" type="submit">
-            LOGIN
+            GİRİŞ
           </button>
-          <button
-            className="btn-primary !bg-secondary"
-            type="button"
-            onClick={() => signIn("github")}
-          >
-            <i className="fa fa-github mr-2 text-lg"></i>
-            GITHUB
-          </button>
+        
           <Link href="/auth/register">
             <span className="text-sm underline cursor-pointer text-secondary">
-              Do you no have a account?
+              Hesabın yok mu?
             </span>
           </Link>
         </div>
