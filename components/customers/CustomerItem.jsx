@@ -8,8 +8,8 @@ const CustomerItem = ({ imgSrc }) => {
           Fiyatlar Çoğu siteye göre daha uygun ürünleri çok kaliteli kesinlikle tavsiye ederim.
         </p>
         <div className="flex flex-col mt-4">
-          <span className="text-lg font-semibold">Moana Michell</span>
-          <span className="text-[15px]">magna aliqua</span>
+          <span className="text-lg font-semibold">Müşteri yorumu</span>
+          <span className="text-[15px]"></span>
         </div>
       </div>
 
