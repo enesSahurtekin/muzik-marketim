@@ -17,7 +17,7 @@ const Cart = ({ userList }) => {
 
   const newOrder = {
     customer: user?.fullName,
-    address: user?.address ? user?.address : "Adres Yok",
+    address: user?.address ? user?.address : "Adres yok",
     total: cart.total,
     method: 0,
   };
@@ -25,7 +25,7 @@ const Cart = ({ userList }) => {
   const createOrder = async () => {
     try {
       if (session) {
-        if (confirm("Sipariş vereceğinizden emin misiniz?")) {
+        if (confirm("sipariş vermek istediğinizden emin misiniz?")) {
           const res = await axios.post(
             `${process.env.NEXT_PUBLIC_API_URL}/orders`,
             newOrder
@@ -33,13 +33,13 @@ const Cart = ({ userList }) => {
           if (res.status === 201) {
             router.push(`/order/${res.data._id}`);
             dispatch(reset());
-            toast.success("Sipariş başarıyla oluşturuldu", {
+            toast.success("sipariş başarıyla oluşturuldu", {
               autoClose: 1000,
             });
           }
         }
       } else {
-        toast.error("Lütfen Önce Giriş Yapınız.", {
+        toast.error("lütfen önce giriş yapınız.", {
           autoClose: 1000,
         });
       }
@@ -55,26 +55,26 @@ const Cart = ({ userList }) => {
   return (
     <div className="min-h-[calc(100vh_-_433px)]">
       <div className="flex justify-between items-center md:flex-row flex-col">
-        <div className="md:min-h-[calc(100vh_-_433px)] flex items-center flex-1 p-10 overflow-x-auto w-full">
+        <div className="md:min-h-[calc(100vh_-_433x)] flex items-center flex-1 p-20 overflow-x-auto w-full">
           <div className="max-h-52 overflow-auto w-full">
             {cart?.products?.length > 0 ? (
-              <table className="w-full text-sm text-center text-gray-500 min-w-[1000px]">
+              <table className="w-full text-sm text-center text-gray-500 min-w-[600x]">
                 <thead className="text-xs text-gray-400 uppercase bg-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-6">
-                      Ürün
+                      ÜRÜN
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      Extra
+                      EKSTRA
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      Fiyat
+                      FİYAT
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      Miktar
+                      MİKTAR
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      Durum
+                      DURUM
                     </th>
                   </tr>
                 </thead>
@@ -99,11 +99,11 @@ const Cart = ({ userList }) => {
                             <span key={item.id}>{item.text}, </span>
                           ))
                         ) : (
-                          <span>Boş</span>
+                          <span>boş</span>
                         )}
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                      ₺{product.price}
+                        {product.price}₺
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                         {product.quantity}
@@ -113,7 +113,7 @@ const Cart = ({ userList }) => {
                           className="text-red-500 hover:text-white"
                           onClick={() => handleDelete(index)}
                         >
-                          Sil
+                          sil
                         </button>
                       </td>
                     </tr>
@@ -126,12 +126,12 @@ const Cart = ({ userList }) => {
           </div>
         </div>
         <div className="bg-secondary min-h-[calc(100vh_-_433px)] flex flex-col justify-center text-white p-12 md:w-auto w-full   md:text-start !text-center">
-          <Title addClass="text-[40px]">KART TOPLAMI </Title>
+          <Title addClass="text-[40px]">CART TOTAL</Title>
 
           <div className="mt-6">
-            <b>Ara Toplam: </b>₺{cart.total} <br />
-            <b className=" inline-block my-1">İndirim: </b>₺0.00 <br />
-            <b>Toplam: </b>₺{cart.total}
+            <b>aratotal: </b>{cart.total}₺<br />
+            <b className=" inline-block my-1">indirim: </b>0₺ <br />
+            <b>Total: </b>{cart.total}₺
           </div>
 
           <div>
@@ -139,7 +139,7 @@ const Cart = ({ userList }) => {
               className="btn-primary mt-4 md:w-auto w-52"
               onClick={createOrder}
             >
-              ŞİMDİ ÖDE!
+              SİPARİŞ VER!
             </button>
           </div>
         </div>
