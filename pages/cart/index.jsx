@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Title from "../../components/ui/Title";
 import { useSelector, useDispatch } from "react-redux";
-import { reset } from "../../redux/cartSlice";
+import { reset, removeProduct } from "../../redux/cartSlice";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
@@ -9,15 +9,15 @@ import { useRouter } from "next/router";
 
 const Cart = ({ userList }) => {
   const { data: session } = useSession();
-    const cart = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
-    const user = userList?.find((user) => user.email === session?.user?.email);
+  const user = userList?.find((user) => user.email === session?.user?.email);
   const router = useRouter();
 
   const newOrder = {
     customer: user?.fullName,
-    address: user?.address ? user?.address : "adres yok",
+    address: user?.address ? user?.address : "Adres Yok",
     total: cart.total,
     method: 0,
   };
@@ -25,8 +25,7 @@ const Cart = ({ userList }) => {
   const createOrder = async () => {
     try {
       if (session) {
-        if (confirm( "Sipariş vereceğinizden emin misiniz?")) {
-                   
+        if (confirm("Sipariş vereceğinizden emin misiniz?")) {
           const res = await axios.post(
             `${process.env.NEXT_PUBLIC_API_URL}/orders`,
             newOrder
@@ -34,14 +33,13 @@ const Cart = ({ userList }) => {
           if (res.status === 201) {
             router.push(`/order/${res.data._id}`);
             dispatch(reset());
-            toast.success("Sipariş başarıyla oluşturuldu",{
-                  
+            toast.success("Sipariş başarıyla oluşturuldu", {
               autoClose: 1000,
             });
           }
         }
       } else {
-        toast.error("Please login first.", {
+        toast.error("Lütfen Önce Giriş Yapınız.", {
           autoClose: 1000,
         });
       }
@@ -50,26 +48,33 @@ const Cart = ({ userList }) => {
     }
   };
 
+  const handleDelete = (productIndex) => {
+    dispatch(removeProduct(productIndex));
+  };
+
   return (
     <div className="min-h-[calc(100vh_-_433px)]">
-     <div className="flex justify-between items-center md:flex-row flex-col">
+      <div className="flex justify-between items-center md:flex-row flex-col">
         <div className="md:min-h-[calc(100vh_-_433px)] flex items-center flex-1 p-10 overflow-x-auto w-full">
-        <div className="max-h-52 overflow-auto w-full">
+          <div className="max-h-52 overflow-auto w-full">
             {cart?.products?.length > 0 ? (
               <table className="w-full text-sm text-center text-gray-500 min-w-[1000px]">
                 <thead className="text-xs text-gray-400 uppercase bg-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-6">
-                      ÜRÜN
+                      Ürün
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      EKSTRA
+                      Extra
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      FİYAT
+                      Fiyat
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      MİKTAR
+                      Miktar
+                    </th>
+                    <th scope="col" className="py-3 px-6">
+                      Durum
                     </th>
                   </tr>
                 </thead>
@@ -89,17 +94,27 @@ const Cart = ({ userList }) => {
                         <span>{product.name}</span>
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                        {product.extras?.length > 0
-                          ? product.extras.map((item) => (
-                              <span key={item.id}>{item.text}, </span>
-                            ))
-                          : "boş"}
+                        {product.extras?.length > 0 ? (
+                          product.extras.map((item) => (
+                            <span key={item.id}>{item.text}, </span>
+                          ))
+                        ) : (
+                          <span>Boş</span>
+                        )}
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                        {product.price}₺
+                      ₺{product.price}
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                         {product.quantity}
+                      </td>
+                      <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
+                        <button
+                          className="text-red-500 hover:text-white"
+                          onClick={() => handleDelete(index)}
+                        >
+                          Sil
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -111,20 +126,20 @@ const Cart = ({ userList }) => {
           </div>
         </div>
         <div className="bg-secondary min-h-[calc(100vh_-_433px)] flex flex-col justify-center text-white p-12 md:w-auto w-full   md:text-start !text-center">
-          <Title addClass="text-[40px]">Kart TOTAL</Title>
+          <Title addClass="text-[40px]">KART TOPLAMI </Title>
 
           <div className="mt-6">
-          <b>aratotal: </b>{cart.total}₺<br />
-            <b className=" inline-block my-1">indirim: </b>$0.00 <br />
-            <b>Total: </b>{cart.total}₺
+            <b>Ara Toplam: </b>₺{cart.total} <br />
+            <b className=" inline-block my-1">İndirim: </b>₺0.00 <br />
+            <b>Toplam: </b>₺{cart.total}
           </div>
 
           <div>
-          <button
+            <button
               className="btn-primary mt-4 md:w-auto w-52"
               onClick={createOrder}
             >
-              Kontrol et!
+              ŞİMDİ ÖDE!
             </button>
           </div>
         </div>
@@ -132,6 +147,7 @@ const Cart = ({ userList }) => {
     </div>
   );
 };
+
 export const getServerSideProps = async () => {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users`);
 
@@ -141,4 +157,5 @@ export const getServerSideProps = async () => {
     },
   };
 };
+
 export default Cart;
