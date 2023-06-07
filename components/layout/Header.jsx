@@ -96,7 +96,7 @@ const Header = () => {
             />
           </button>
           <a href="#" className="md:inline-block hidden sm">
-            <button className="btn-primary">Sipariş Ver</button>
+           
           </a>
           <button
             className="sm:hidden inline-block"
