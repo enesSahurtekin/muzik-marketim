@@ -21,7 +21,7 @@ const CampaignItem = () => {
           <span className="text-[40px]">20%</span>
           <span className="text-sm inline-block ml-1">indirim</span>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
