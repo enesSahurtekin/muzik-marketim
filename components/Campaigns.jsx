@@ -21,9 +21,7 @@ const CampaignItem = () => {
           <span className="text-[40px]">20%</span>
           <span className="text-sm inline-block ml-1">indirim</span>
         </div>
-        <button className="btn-primary flex items-center gap-x-2">
-          Sipariş ver <MdShoppingCart size={20} />
-        </button>
+       
       </div>
     </div>
   );
